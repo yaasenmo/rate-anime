@@ -1,0 +1,16 @@
+{
+  "name": "ratemyanime",
+  "version": "1.0.0",
+  "description": "Full-stack anime rating website",
+  "scripts": {
+    "start": "cd backend && node server.js",
+    "server": "cd backend && nodemon server.js",
+    "client": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

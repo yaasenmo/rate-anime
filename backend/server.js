@@ -32,12 +32,22 @@ app.get('/api/health', (req, res) => {
 
 app.use(errorHandler);
 
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    error: 'Route not found'
+// Serve static files from React build in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+  
+  // Handle React routing - return index.html for any non-API routes
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
   });
-});
+} else {
+  app.use((req, res) => {
+    res.status(404).json({
+      success: false,
+      error: 'Route not found'
+    });
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
