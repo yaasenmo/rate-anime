@@ -143,7 +143,7 @@ const AnimeDetail = () => {
         <div className="lg:col-span-1">
           <div className="sticky top-24">
             <img
-              src={`http://localhost:5000/uploads/${anime.image}`}
+              src={`/uploads/${anime.image}`}
               alt={anime.title}
               className="w-full rounded-xl shadow-2xl"
             />

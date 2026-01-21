@@ -27,7 +27,7 @@ const AnimeCard = ({ anime, onLike }) => {
     <div className="bg-dark-200 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500/50 transition-all duration-300 group">
       <Link to={`/anime/${anime._id}`} className="relative aspect-[3/4] overflow-hidden block cursor-pointer">
         <img
-          src={`http://localhost:5000/uploads/${anime.image}`}
+          src={`/uploads/${anime.image}`}
           alt={anime.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
