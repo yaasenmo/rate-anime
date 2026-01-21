@@ -20,9 +20,9 @@ RUN npm run build
 WORKDIR /app/backend
 COPY backend/ ./
 
-# Copy anime images
+# Copy anime images (using JSON array syntax for paths with special characters)
 WORKDIR /app
-COPY "Anime, photos" "./Anime, photos"
+COPY ["Anime, photos", "./Anime, photos/"]
 
 # Set environment and start
 WORKDIR /app/backend
