@@ -13,8 +13,7 @@ RUN npm install
 
 # Install frontend dependencies and build
 WORKDIR /app/frontend
-RUN npm install
-RUN npm run build
+RUN npm install && chmod -R +x node_modules/.bin && npx react-scripts build
 
 # Set environment and start
 WORKDIR /app/backend
