@@ -18,3 +18,9 @@ logs/
 .DS_Store
 .vscode/
 .idea/
+
+#additional files
+.nix
+.nixpacks.toml  
+TUTORIAL_BACKEND.md
+TUTORIAL_FRONTEND.md
